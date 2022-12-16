@@ -1,0 +1,9 @@
+# activate Conda
+{{ ilastik_conda }}
+
+# activate Ilastik conda environment
+{{ ilastik_conda_environment }}
+
+# run Ilastik
+{{ run_ilastik }} --headless --project={{ ilp }} --output_format=tiff --export_source="Probabilities" --output_filename_format={{ output_path }} {{ image_path }}
+
