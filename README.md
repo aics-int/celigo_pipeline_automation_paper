@@ -23,7 +23,7 @@ For full package documentation please visit [BrianWhitneyAI.github.io/celigo_pip
 # System Requirements
 ## Hardware requirements
 `celigo_pipeline_automation_paper` package requires only a standard computer with enough RAM to support the in-memory operations.
-
+#
 ## Software requirements
 ### OS Requirements
 This package is supported for *Linux*. The package has been tested on the following systems:
@@ -39,19 +39,19 @@ Cellprofiler ~= 4.2.4
 
 # Installation Guide
 
-### Pre-requisites
+## Pre-requisites
 Python 3.9 & `make`
 #
 ## Package Installation
 
-baisc usage: `make install`
-development usage: make `make install-dev`
+    basic usage: `make install`
+    development usage: make `make install-dev`
 
-*Note:* This package is dependent on Cellprofiler 4.2.4, which can be a diffacult package to install given it's many dependencies, we reccomend testing the install of the Cellprofiler package on your computer prior to installing `celigo_pipeline_automation_paper`.
-
+*Note:* This package is dependent on Cellprofiler 4.2.4, which can be a difficult package to install given its many dependencies, we recommend testing the installation of the Cellprofiler package on your computer prior to installing `celigo_pipeline_automation_paper`.
+#
 ## Ilastik Setup
     
-1. Install the Ilastik app to your local computer. This can be done from their [website](https://www.ilastik.org/documentation/basics/installation.html). Once you have done this, navigate to the Ilastik app folder and locate the run_ilastik.sh script.
+1. Install the Ilastik app to your local computer. This can be done from their [website](https://www.ilastik.org/documentation/basics/installation.html). Once you have done this, navigate to the Ilastik app directory and locate the run_ilastik.sh script.
 
 2. Next you will need to manually edit the following in [resource_paths.json](celigo_pipeline_automation_paper/bin/resource_paths.json):
 
@@ -65,7 +65,7 @@ Once this process is completed you will want to rerun `make install`
 
 # Demos 
 
-Programatic Example
+Programmatic Example
 [pipelines](#celigo_pipeline_automation_paper/pipelines)
 
 CLI Example folder 
