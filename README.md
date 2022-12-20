@@ -37,37 +37,36 @@ Jinja2 ~= 3.1.2
 Cellprofiler ~= 4.2.4
 ```
 
-# Installation
+# Installation Guide
 
-## Installation Guide
-#### Pre-requisites
+### Pre-requisites
 Python 3.9 & `make`
+#
+## Package Installation
 
-## Package install
-    baisc usage: `make install`
-    development usage: make `make install-dev`
+baisc usage: `make install`
+development usage: make `make install-dev`
 
-    *Note: This package is dependent on Cellprofiler 4.2.4, which can be a diffacult package to install given it's many dependencies, we reccomend testing the install of the Cellprofiler package on your computer prior to installing `celigo_pipeline_automation_paper`.
+*Note:* This package is dependent on Cellprofiler 4.2.4, which can be a diffacult package to install given it's many dependencies, we reccomend testing the install of the Cellprofiler package on your computer prior to installing `celigo_pipeline_automation_paper`.
 
 ## Ilastik Setup
     
-    1. Install the Ilastik app to your local computer. This can be done from their website: [Link](https://www.ilastik.org/documentation/basics/installation.html)
-    Once you have done this, navigate to the Ilastik app folder and locate the run_ilastik.sh script.
+1. Install the Ilastik app to your local computer. This can be done from their [website](https://www.ilastik.org/documentation/basics/installation.html). Once you have done this, navigate to the Ilastik app folder and locate the run_ilastik.sh script.
 
-    2. Next you will need to manually edit the following:
+2. Next you will need to manually edit the following in [resource_paths.json](celigo_pipeline_automation_paper/bin/resource_paths.json):
 
-        "6_well_ilp":[Path to 6 Well ILP],
-        "96_well_ilp":[Path to 96 Well ILP],
-        "run_ilastik":[Path to run_ilastik.sh]
-
-    The ILP files can be found under the [pipelines](celigo_pipeline_automation_paper/pipelines) folder, but are not specifically part of the package, After cloning this repository you can choose to move them to an external location or leave them in place.
-
-    Once this process is completed you will want to rerun `make install`
+    * "6_well_ilp"  : [Path to 6 Well ILP],
+    * "96_well_ilp" : [Path to 96 Well ILP],
+    * "run_ilastik" : [Path to run_ilastik.sh]
+##
+The ILP files can be found under the [pipelines](#celigo_pipeline_automation_paper/pipelines) folder, but are not specifically part of the package, After cloning this repository you can choose to move them to an external location or leave them in place.
+##
+Once this process is completed you will want to rerun `make install`
 
 # Demos 
 
 Programatic Example
-
+[pipelines](#celigo_pipeline_automation_paper/pipelines)
 
 CLI Example folder 
 
