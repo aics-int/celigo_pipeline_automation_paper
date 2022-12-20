@@ -41,21 +41,28 @@ Cellprofiler ~= 4.2.4
 
 ## Installation Guide
 #### Pre-requisites
-Python 3.10 & `make`
+Python 3.9 & `make`
 
 ## Package install
     baisc usage: `make install`
     development usage: make `make install-dev`
 
+    *Note: This package is dependent on Cellprofiler 4.2.4, which can be a diffacult package to install given it's many dependencies, we reccomend testing the install of the Cellprofiler package on your computer prior to installing `celigo_pipeline_automation_paper`.
+
 ## Ilastik Setup
-    https://www.ilastik.org/documentation/basics/installation.html
+    
+    1. Install the Ilastik app to your local computer. This can be done from their website: [Link](https://www.ilastik.org/documentation/basics/installation.html)
+    Once you have done this, navigate to the Ilastik app folder and locate the run_ilastik.sh script.
 
-## Configuring resource_paths.json
-    You will need to manually edit the following:
+    2. Next you will need to manually edit the following:
 
-    "6_well_ilp":"/allen/aics/microscopy/CellProfiler_4.1.3_Testing/6WellCeligoPipelines/6_well_colony_ilastikpipeline_v2.1.1.ilp",
-    "96_well_ilp": "/allen/aics/microscopy/CellProfiler_4.1.3_Testing/96wellPipeline_v2/96_well_colony_celigo_v2.ilp",
-    "run_ilastik": "/allen/aics/apps/prod/ilastik/ilastik-1.3.3post3-Linux/run_ilastik.sh"
+        "6_well_ilp":[Path to 6 Well ILP],
+        "96_well_ilp":[Path to 96 Well ILP],
+        "run_ilastik":[Path to run_ilastik.sh]
+
+    The ILP files can be found under the [pipelines](celigo_pipeline_automation_paper/pipelines) folder, but are not specifically part of the package, After cloning this repository you can choose to move them to an external location or leave them in place.
+
+    Once this process is completed you will want to rerun `make install`
 
 # Demos 
 
