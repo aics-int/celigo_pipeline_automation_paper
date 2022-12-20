@@ -4,48 +4,68 @@
 [![Documentation](https://github.com/BrianWhitneyAI/celigo_pipeline_automation_paper/workflows/Documentation/badge.svg)](https://BrianWhitneyAI.github.io/celigo_pipeline_automation_paper/)
 [![Code Coverage](https://codecov.io/gh/BrianWhitneyAI/celigo_pipeline_automation_paper/branch/main/graph/badge.svg)](https://codecov.io/gh/BrianWhitneyAI/celigo_pipeline_automation_paper)
 
-Contains tools for the celigo pipeline
+`celigo_pipeline_automation_paper` 
 
-celigo_pipeline_automation_paper==1.0.0
----
+- [Overview](#overview)
+- [Documentation](#documentation)
+- [System Requirements](#system-requirements)
+- [Installation Guide](#installation-guide)
+- [License](#license)
+
+# Overview
+``celigo_pipeline_automation_paper`` 
 
 
-## Installation
-
-
-
-## Documentation
+# Documentation
 
 For full package documentation please visit [BrianWhitneyAI.github.io/celigo_pipeline_automation_paper](https://BrianWhitneyAI.github.io/celigo_pipeline_automation_paper).
 
-## Development
+# System Requirements
+## Hardware requirements
+`celigo_pipeline_automation_paper` package requires only a standard computer with enough RAM to support the in-memory operations.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
+## Software requirements
+### OS Requirements
+This package is supported for *Linux*. The package has been tested on the following systems:
++ Linux: Ubuntu 16.04
 
-## The Commands You Need To Know
+### Python Dependencies
+`celigo_pipeline_automation_paper` mainly depends on the Python scientific stack.
 
-## System Requirements
-     - Systems
-     - Tested on 
+```
+Jinja2 ~= 3.1.2
+Cellprofiler ~= 4.2.4
+```
+
+# Installation
 
 ## Installation Guide
+#### Pre-requisites
+Python 3.10 & `make`
 
-1. 
+## Package install
+    baisc usage: `make install`
+    development usage: make `make install-dev`
 
-2. Cellprofiler Setup 
+## Ilastik Setup
+    https://www.ilastik.org/documentation/basics/installation.html
 
-3. Ilastik Setup
+## Configuring resource_paths.json
+    You will need to manually edit the following:
 
-4. Template Configuration
+    "6_well_ilp":"/allen/aics/microscopy/CellProfiler_4.1.3_Testing/6WellCeligoPipelines/6_well_colony_ilastikpipeline_v2.1.1.ilp",
+    "96_well_ilp": "/allen/aics/microscopy/CellProfiler_4.1.3_Testing/96wellPipeline_v2/96_well_colony_celigo_v2.ilp",
+    "run_ilastik": "/allen/aics/apps/prod/ilastik/ilastik-1.3.3post3-Linux/run_ilastik.sh"
 
-5. Package Installment
+# Demos 
 
-     `make install`
-
-    This will setup a virtual environment local to this project and install all of the
-    project's dependencies into it. The virtual env will be located in `celigo_pipeline_automation_paper/venv`.
+Programatic Example
 
 
-## Demos 
+CLI Example folder 
 
+
+# License
+
+This project is covered under the **Allen Institute Software License**.
 
