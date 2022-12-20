@@ -1,8 +1,7 @@
-# activate Conda
-{{ cellprofiler_conda }}
+#!/bin/bash
 
-# activate cellprofiler conda environment
-{{ activate_cellprofiler }}
+# activate cellprofiler envirnment
+{{ cellprofiler_env }}
 
 # run CellProfiler
-cellprofiler -r -c -p {{ pipeline_path }} --file-list {{ filelist_path }} -o {{ output_dir }}
+cellprofiler -r -c -p {{ cellprofiler_pipeline_path }} --file-list {{ filelist_path }} -o {{ output_dir }}

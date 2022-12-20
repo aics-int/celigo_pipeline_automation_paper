@@ -9,9 +9,13 @@ license = {file = "LICENSE.txt"}
 readme = "README.md"
 requires-python = ">=3.9.2"
 
+
 dependencies = [
     "Jinja2 ~= 3.1.2",
+    # "numpy ~= 1.23.0",
+    # "Cellprofiler ~= 4.2.4",   
 ]
+
 
 [project.optional-dependencies]
 dev = [
@@ -45,6 +49,6 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project.scripts]
-celigo_pipeline_cli= "celigo_pipeline_automation_paper.bin.celigo_pipeline_automation_paper_cli:main"
+celigo_pipeline_cli= "celigo_pipeline_automation_paper.bin.celigo_pipeline_cli:main"
 celigo_pipeline_directory = "celigo_pipeline_automation_paper.bin.run_dir_cli:main"
 

@@ -1,8 +1,7 @@
-# activate Conda
-{{ resize_conda }}
+#!/bin/bash
 
-# activate cellprofiler conda environment
-{{ activate_cellprofiler }}
+# activate resize environment
+{{ resize_env }}
 
 # run Resize with CellProfiler
-cellprofiler -r -c -p {{ pipeline_path }} --file-list {{ filelist_path }} -o {{ output_path }}
+cellprofiler -r -c -p {{ resize_pipeline_path }} --file-list {{ filelist_path }} -o {{ output_path }}

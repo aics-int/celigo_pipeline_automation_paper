@@ -33,15 +33,13 @@ def run_all(
     image = CeligoSingleImage(raw_image_path, working_dir)
 
     downsample_output_file_path = image.downsample()
-    job_complete_check([downsample_output_file_path])
-
+    log.info("Process Downsample complete: " + str(downsample_output_file_path))
     ilastik_output_file_path = image.run_ilastik()
-    job_complete_check([ilastik_output_file_path])
-
+    log.info("Process Ilastik complete: " + str(ilastik_output_file_path))
     cellprofiler_output_file_paths = image.run_cellprofiler()
-    job_complete_check(cellprofiler_output_file_paths)
+    log.info("Process Downsample complete: " + str(cellprofiler_output_file_paths))
 
-    log.info("Process Complete.")
+    log.info("All Processes Complete.")
 
 
 def job_complete_check(

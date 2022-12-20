@@ -9,13 +9,14 @@ import subprocess
 
 from jinja2 import Environment, PackageLoader
 
-from .. import pipelines
+from .. import bin, pipelines
 from .celigo_image import CeligoImage
 
 log = logging.getLogger(__name__)
 
-with open(Path(__file__).parent / "../bin/resource_paths.json", "r") as f:
-    USER_CELIGO_PATHS = json.load(f)
+with pkg_resources.path(bin, "resource_paths.json") as path:
+    with open(path, "r") as file:
+        USER_CELIGO_PATHS = json.load(file)
 
 SIX_WELL_PIPELINES = {
     "rescale_pipeline": "6_well_rescale_pipeline.cppipe",
@@ -58,6 +59,7 @@ class CeligoSingleImage(CeligoImage):
         raw_image = Path(raw_image_path)
         log.info(f"Executing Celigo pipeline on {raw_image.name}.")
 
+        # Signifagant comment
         if os.path.getsize(raw_image_path) > 100000000:
             self.image_type = "6 Well"
             self.pipeline_table = SIX_WELL_PIPELINES
@@ -153,11 +155,11 @@ class CeligoSingleImage(CeligoImage):
         script_config = {
             "filelist_path": str(self.resize_filelist_path),
             "output_path": str(self.working_dir),
-            "pipeline_path": str(self.rescale_pipeline_path),
-            "resize_conda": USER_CELIGO_PATHS["cellprofiler_conda"],
-            "activate_cellprofiler": USER_CELIGO_PATHS[
-                "cellprofiler_conda_environment"
-            ],
+            "resize_pipeline_path": str(self.rescale_pipeline_path),
+            "resize_env": (
+                "source "
+                + str(Path(__file__).parent.parent.parent / "venv/bin/activate")
+            ),
         }
 
         # Generates script_body from existing templates.
@@ -173,8 +175,12 @@ class CeligoSingleImage(CeligoImage):
         with open(self.working_dir / "resize.sh", "w+") as rsh:
             rsh.write(script_body)
 
-        # Runs resize on slurm
-        self.output = subprocess.call(["sh", f"{str(self.working_dir)}/resize.sh"])
+        process = subprocess.Popen(
+            [f"{str(self.working_dir)}/resize.sh"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        process.wait()
 
         # Sets path to resized image to image path for future use
         self.image_path = (
@@ -197,8 +203,6 @@ class CeligoSingleImage(CeligoImage):
         script_config = {
             "image_path": f"'{str( self.image_path)}'",
             "output_path": f"'{str(self.image_path.with_suffix(''))}_probabilities.tiff'",
-            "ilastik_conda": USER_CELIGO_PATHS["ilastik_conda"],
-            "ilastik_conda_environment": USER_CELIGO_PATHS["ilastik_conda_environment"],
             "run_ilastik": USER_CELIGO_PATHS["run_ilastik"],
             "ilp": self.pipeline_table["ilp"],
         }
@@ -217,12 +221,12 @@ class CeligoSingleImage(CeligoImage):
             rsh.write(script_body)
 
         # Submit bash script ilastik.sh on SLURM
-        self.output = subprocess.call(
-            [
-                "sh",
-                f"{str(self.working_dir)}/ilastik.sh",
-            ]
+        process = subprocess.Popen(
+            [f"{str(self.working_dir)}/ilastik.sh"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
         )
+        process.wait()
 
         # Creates filelist.txt
         with open(self.working_dir / "filelist.txt", "w+") as rfl:
@@ -250,11 +254,11 @@ class CeligoSingleImage(CeligoImage):
         script_config = {
             "filelist_path": str(self.filelist_path),
             "output_dir": str(self.working_dir / "cell_profiler_outputs"),
-            "pipeline_path": str(self.cellprofiler_pipeline_path),
-            "cellprofiler_conda": USER_CELIGO_PATHS["cellprofiler_conda"],
-            "activate_cellprofiler": USER_CELIGO_PATHS[
-                "cellprofiler_conda_environment"
-            ],
+            "cellprofiler_pipeline_path": str(self.cellprofiler_pipeline_path),
+            "cellprofiler_env": (
+                "source "
+                + str(Path(__file__).parent.parent.parent / "venv/bin/activate")
+            ),
         }
 
         # Generates script for SLURM submission from templates.
@@ -271,12 +275,12 @@ class CeligoSingleImage(CeligoImage):
             rsh.write(script_body)
 
         # Submit bash script cellprofiler.sh on SLURM
-        self.output = subprocess.call(
-            [
-                "sh",
-                f"{str(self.working_dir)}/cellprofiler.sh",
-            ]
+        process = subprocess.Popen(
+            [f"{str(self.working_dir)}/cellprofiler.sh"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
         )
+        process.wait()
 
         # Set output path
         self.cell_profiler_output_path = self.working_dir / "cell_profiler_outputs"

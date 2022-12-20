@@ -61,3 +61,8 @@ clean:  # Clear proj dir of all .gitignored files
 > git clean -Xfd -e "!.vscode"
 .PHONY: clean
 
+build: install
+> rm -rf build/
+> rm -rf dist/
+> $(PYTHON) -m build
+.PHONY: build
