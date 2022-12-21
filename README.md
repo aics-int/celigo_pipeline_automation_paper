@@ -13,7 +13,7 @@
 - [License](#license)
 
 # Overview
-``celigo_pipeline_automation_paper`` 
+``celigo_pipeline_automation_paper`` is a companion package for [Paper]. It contains algorithms for...
 
 
 # Documentation
@@ -55,7 +55,7 @@ There are a few components to this installation guide:
 4. **Install make**  `celigo_pipeline_automation_paper` uses a Makefile to organize its dependencies and development tools. [How to install make.](https://sp21.datastructur.es/materials/guides/make-install.html)
 
 ## Package Installation
-Once the [Initial Setup](#initial-setup) is complete, navigate to your cloned repository from the command line. Next, you need to build the virtual environment used for running this package. This is done using the Makefile and can be done using the following commands:
+Once the [Initial Setup](#initial-setup) is complete, navigate to your cloned repository from the command line. Next, you need to build the virtual environment used for running this package. This is done using the Makefile and can be done with the following commands:
 
     basic usage: `make install`
     development usage: make `make install-dev`
