@@ -81,13 +81,31 @@ make install-dev
 ```
 # Demos 
 
-Programmatic Example
-[pipelines](#celigo_pipeline_automation_paper/pipelines)
+## Programmatic Example
+```
+from celligo_pipeline_automation_paper import CeligoSingleImage
 
-CLI Example folder 
+image = CeligoSingleImage(raw_image_path = [RAW_IMAGE_PATH], working_dir = [WORKING_DIRECTORY])
 
+downsample_output_path = image.downsample()
+ilastik_output_path = image.run_ilastik()
+cellprofiler_output_paths = image.run_cellprofiler()
+```
+## CLI Example 
+The pipeline can also be run from the command line.
+
+#### Single Image
+```
+celigo_pipeline_cli celigo_pipeline_cli --image_path "[RAW_IMAGE_PATH]" --working_dir "[WORKING_DIRECTORY]"
+
+```
+#### Directory
+```
+run_dir_cli  --dir_path "[RAW_IMAGE_PATH]" --working_dir "[WORKING_DIRECTORY]" --chunk_size [CHUNK_SIZE]
+
+```
 
 # License
 
-This project is covered under the **Allen Institute Software License**.
+This project is covered under the **[Allen Institute Software License](LICENSE)**.
 
