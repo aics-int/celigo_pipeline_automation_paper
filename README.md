@@ -10,11 +10,12 @@
 - [Documentation](#documentation)
 - [System Requirements](#system-requirements)
 - [Installation Guide](#installation-guide)
+- [Demos](#demos)
+- [Example Outputs](#example-outputs)
 - [License](#license)
 
 # Overview
-``celigo_pipeline_automation_paper`` is a companion package for [Paper]. It contains algorithms for...
-
+``celigo_pipeline_automation_paper`` is a companion package for **Automated hiPSC culture and sample preparation for 3D live cell microscopy**. It contains algorithms to run an automated image-based colony segmentation and feature extraction pipeline to predict cell count and select wells with consistent morphology for high resolution 3D microscopy.
 
 # Documentation
 
@@ -25,14 +26,14 @@ For full package documentation please visit [aics-int.github.io/celigo_pipeline_
 `celigo_pipeline_automation_paper` package requires only a standard computer with enough RAM to support the in-memory operations.
 
 Memory Requirements:
-* Six Well: 
-* Ninety Six Well:
+* Six Well: 64 GB
+* Ninety Six Well: 16 GB
 
-*Note: 
+*Note: This process was originally intended for use in a High Processing Cluster. Running single files is possible with the given memory requirements, however, running tandem processes on a local computer is not reccomended.
 
 
 #
-## Software requirements
+## Software Requirements
 ### OS Requirements
 This package is supported for *Linux* and *macOS*. The package has been tested on the following systems:
 + Linux: Ubuntu 18.04.6 LTS
@@ -113,6 +114,14 @@ celigo_pipeline_cli celigo_pipeline_cli --image_path "[RAW_IMAGE_PATH]" --workin
 run_dir_cli  --dir_path "[RAW_IMAGE_PATH]" --working_dir "[WORKING_DIRECTORY]" --chunk_size [CHUNK_SIZE]
 
 ```
+
+# Example Outputs
+#### 6 Well
+* [6 Well testset](#celigo_pipeline_automation_paper/testset/6_well)
+* [6 Well expected output](#celigo_pipeline_automation_paper/testset/6_well_expected_output)
+#### 96 Well
+* [96 Well testset](#celigo_pipeline_automation_paper/testset/96_well)
+* [96 Well expected output](#celigo_pipeline_automation_paper/testset/6_well_expected_output)
 
 # License
 
