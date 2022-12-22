@@ -26,8 +26,8 @@ For full package documentation please visit [aics-int.github.io/celigo_pipeline_
 `celigo_pipeline_automation_paper` package requires only a standard computer with enough RAM to support the in-memory operations.
 
 Memory Requirements:
-* Six Well: 64 GB
-* Ninety Six Well: 16 GB
+* Six Well: 64 GB (~ 20 min runtime)
+* Ninety Six Well: 16 GB (~ 1 min runtime)
 
 *Note: This process was originally intended for use in a High Processing Cluster. Running single files is possible with the given memory requirements, however, running tandem processes on a local computer is not reccomended.
 
