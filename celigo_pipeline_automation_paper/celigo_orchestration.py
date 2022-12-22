@@ -1,7 +1,6 @@
 import logging
 import multiprocessing
 import os
-import pathlib
 import sys
 import time
 import typing
@@ -40,15 +39,6 @@ def run_all(
     log.info("Process Downsample complete: " + str(cellprofiler_output_file_paths))
 
     log.info("All Processes Complete.")
-
-
-def job_complete_check(
-    filelist: typing.List[pathlib.Path],
-):
-    # Main Logic Loop: waiting for files to exist or maximum wait-time reached.
-    while not all([os.path.isfile(f) for f in filelist]):
-        time.sleep(5)
-    return
 
 
 def run_all_dir(

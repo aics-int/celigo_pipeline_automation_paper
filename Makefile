@@ -61,8 +61,45 @@ clean:  # Clear proj dir of all .gitignored files
 > git clean -Xfd -e "!.vscode"
 .PHONY: clean
 
+docs:
+> source $(ACTIVATE) && sphinx-apidoc -f -o docs celigo_pipeline_automation_paper celigo_pipeline_automation_paper/tests
+> source $(ACTIVATE) && sphinx-build -b html docs docs/build
+.PHONY: docs
+
+docs-serve:
+> $(PYTHON) -m http.server --directory docs/build 8080
+.PHONY: docs-serve
+
 build: install
 > rm -rf build/
 > rm -rf dist/
 > $(PYTHON) -m build
 .PHONY: build
+
+publish: build
+> $(PYTHON) -m twine upload --verbose -r release-local dist/*
+.PHONY: publish
+
+publish-snapshot: build
+> $(PYTHON) -m twine upload --verbose -r snapshot-local dist/*
+.PHONY: publish-snapshot
+
+bumpversion-release:
+> $(PYTHON) -m bumpversion --list release
+.PHONY: bumpversion-release
+
+bumpversion-major:
+> $(PYTHON) -m bumpversion --list major
+.PHONY: bumpversion-major
+
+bumpversion-minor:
+> $(PYTHON) -m bumpversion --list minor
+.PHONY: bumpversion-minor
+
+bumpversion-patch:
+> $(PYTHON) -m bumpversion --list patch
+.PHONY: bumpversion-patch
+
+bumpversion-dev:
+> $(PYTHON) -m bumpversion --list devbuild
+.PHONY: bumpversion-dev
