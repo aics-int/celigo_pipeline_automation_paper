@@ -58,11 +58,10 @@ There are a few components to this installation guide:
 
 1. **Install python <=3.9**, [Python Install](https://www.python.org/downloads/)
 
-2. **Make sure git is installed.** [How to install git.](https://git-scm.com/download/win)
+2. **Make sure git is installed,** [How to install git.](https://git-scm.com/download/win)
 
-3. **Clone Repository** [How to clone a repository.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-
-4. **Install make**  `celigo_pipeline_automation_paper` uses a Makefile to organize its dependencies and development tools. [How to install make.](https://sp21.datastructur.es/materials/guides/make-install.html)
+3. **Clone Repository,** [How to clone a repository.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) Note: This Process can take 5-10 minutes for a standard computer.
+4. **Install make,**  `celigo_pipeline_automation_paper` uses a Makefile to organize its dependencies and development tools. [How to install make.](https://sp21.datastructur.es/materials/guides/make-install.html)
 
 ## Package Installation
 Once the [Initial Setup](#initial-setup) is complete, navigate to your cloned repository from the command line. Next, you need to build the virtual environment used for running this package. This is done using the Makefile and can be done with the following commands:
@@ -70,7 +69,7 @@ Once the [Initial Setup](#initial-setup) is complete, navigate to your cloned re
     basic usage: `make install`
     development usage: make `make install-dev`
 
-*Note:* This package is dependent on Cellprofiler 4.2.4, which can be a difficult package to install given its many dependencies. We recommend testing the installation of the Cellprofiler package on your computer prior to installing `celigo_pipeline_automation_paper`.
+*Note:* This package is dependent on Cellprofiler 4.2.4, which can be a difficult package to install given its many dependencies. We recommend testing the installation of the Cellprofiler package on your computer prior to installing this package. [Cellprofiler Repo](https://github.com/CellProfiler/CellProfiler), [Cellprofiler Package](https://pypi.org/project/CellProfiler/)
 
 ## Ilastik Setup
     
