@@ -18,16 +18,25 @@
 
 # Documentation
 
-For full package documentation please visit [BrianWhitneyAI.github.io/celigo_pipeline_automation_paper](https://BrianWhitneyAI.github.io/celigo_pipeline_automation_paper).
+For full package documentation please visit [aics-int.github.io/celigo_pipeline_automation_paper](https://aics-int.github.io/celigo_pipeline_automation_paper/).
 
 # System Requirements
 ## Hardware requirements
 `celigo_pipeline_automation_paper` package requires only a standard computer with enough RAM to support the in-memory operations.
+
+Memory Requirements:
+* Six Well: 
+* Ninety Six Well:
+
+*Note: 
+
+
 #
 ## Software requirements
 ### OS Requirements
-This package is supported for *Linux*. The package has been tested on the following systems:
+This package is supported for *Linux* and *macOS*. The package has been tested on the following systems:
 + Linux: Ubuntu 18.04.6 LTS
++ macOS Monterey 12.5.1
 
 ### Python Dependencies
 `celigo_pipeline_automation_paper` mainly depends on the Python scientific stack.
