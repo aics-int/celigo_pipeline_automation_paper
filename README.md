@@ -117,10 +117,10 @@ run_dir_cli  --dir_path "[RAW_IMAGE_PATH]" --working_dir "[WORKING_DIRECTORY]" -
 # Example Outputs
 ### 6 Well
 * [6 Well testset](celigo_pipeline_automation_paper/testset/6_well)
-* [6 Well expected output](celigo_pipeline_automation_paper/testset/6_well)
+* [6 Well expected output](celigo_pipeline_automation_paper/testset/6_well_expected_output)
 ### 96 Well
 * [96 Well testset](celigo_pipeline_automation_paper/testset/96_well)
-* [96 Well expected output](celigo_pipeline_automation_paper/testset/6_well_expected_output)
+* [96 Well expected output](celigo_pipeline_automation_paper/testset/96_well_expected_output)
 
 # License
 
