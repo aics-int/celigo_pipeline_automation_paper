@@ -1,0 +1,2 @@
+/allen/aics/microscopy/brian_whitney/temp_output/3500005266_Scan_11-30-2022-8-50-15-AM_Well_G11_Ch1_-1um/3500005266_Scan_11-30-2022-8-50-15-AM_Well_G11_Ch1_-1um_rescale.tiff
+/allen/aics/microscopy/brian_whitney/temp_output/3500005266_Scan_11-30-2022-8-50-15-AM_Well_G11_Ch1_-1um/3500005266_Scan_11-30-2022-8-50-15-AM_Well_G11_Ch1_-1um_rescale_probabilities.tiff
