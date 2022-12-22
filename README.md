@@ -81,7 +81,7 @@ Once the [Initial Setup](#initial-setup) is complete, navigate to your cloned re
     * "96_well_ilp" : [Path to 96 Well ILP],
     * "run_ilastik" : [Path to run_ilastik.sh]
 ##
-The ILP files can be found under the [pipelines](#celigo_pipeline_automation_paper/pipelines) folder, but are not specifically part of the package. After cloning this repository you can choose to move them to an external location or leave them in place.
+The ILP files can be found under the [pipelines](celigo_pipeline_automation_paper/pipelines) folder, but are not specifically part of the package. After cloning this repository you can choose to move them to an external location or leave them in place.
 
 Once this process is completed you will want to rerun `make install` or `make install-dev`:
 ```
@@ -115,14 +115,13 @@ run_dir_cli  --dir_path "[RAW_IMAGE_PATH]" --working_dir "[WORKING_DIRECTORY]" -
 ```
 
 # Example Outputs
-#### 6 Well
-* [6 Well testset](#celigo_pipeline_automation_paper/testset/6_well)
-* [6 Well expected output](#celigo_pipeline_automation_paper/testset/6_well_expected_output)
-#### 96 Well
-* [96 Well testset](#celigo_pipeline_automation_paper/testset/96_well)
-* [96 Well expected output](#celigo_pipeline_automation_paper/testset/6_well_expected_output)
+### 6 Well
+* [6 Well testset](celigo_pipeline_automation_paper/testset/6_well)
+* [6 Well expected output](celigo_pipeline_automation_paper/testset/6_well)
+### 96 Well
+* [96 Well testset](celigo_pipeline_automation_paper/testset/96_well)
+* [96 Well expected output](celigo_pipeline_automation_paper/testset/6_well_expected_output)
 
 # License
 
 This project is covered under the **[Allen Institute Software License](LICENSE)**.
-
