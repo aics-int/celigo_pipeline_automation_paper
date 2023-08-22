@@ -59,8 +59,11 @@ There are a few components to this installation guide:
 1. **Install python <=3.9**, [Python Install](https://www.python.org/downloads/)
 
 2. **Make sure git is installed,** [How to install git.](https://git-scm.com/download/win)
-
+    * Notes: 
+        -   This package uses Github LFS to manage larger files, cloning without LFS installed will result in a full download of the testset.
+        -   If your computer uses msys to configure git, your base filename length is set to 260 characters. run:`git config --system core.longpaths true` to set this to default.
 3. **Clone Repository,** [How to clone a repository.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) Note: This Process can take 5-10 minutes for a standard computer.
+
 4. **Install make,**  `celigo_pipeline_automation_paper` uses a Makefile to organize its dependencies and development tools. [How to install make.](https://sp21.datastructur.es/materials/guides/make-install.html)
 
 ## Package Installation
@@ -88,6 +91,23 @@ Once this process is completed you will want to rerun `make install` or `make in
 make install 
 make install-dev
 ```
+# Post-Processing
+After the pipeline, there is some post-processing that is performed to reach our assessable metrics. This process can be performed using a
+series of scripts in this repo. When running multiple wells or plates, each image's metrics are exported to subsequent CSV. We found it helpful to concatenate metrics using this [Merge Script](scripts/merge_metrics.py).
+
+
+### 96 Well QC Scoring
+- 96 well QC scoring is performed with: [96 Well QC Scoring](scripts/well_qc_score.py)
+
+
+### 6 Well Confluency and Estimated Cell Count
+- 96 well confluency and estimated cell count calculation  is performed with: [6 Well Confluency and ECC](scripts/well_confluency.py)
+
+## Hamilton Methods: Venus Method Pkg files
+* Venus Methods files in the pkg format for the Semi Automated Passaging, Seeding and Maintenance, of the Allen cell collection of  hiPSC lines expressing green fluorescent protein tagged to protein identifying specific cellular organelles and structures. 
+* You will find the instructions for the import in the word document in the folder.  The method files should be compatible with the latest version of Venus and associated drivers. If you need assistance when importing and opening due to needed driver and/or library please contact Ben Gregor at beng@alleninstitute.org or your local Hamilton applications specialist.
+
+
 # Demos 
 
 ## Programmatic Example
@@ -121,6 +141,8 @@ run_dir_cli  --dir_path "[RAW_IMAGE_PATH]" --working_dir "[WORKING_DIRECTORY]" -
 ### 96 Well
 * [96 Well testset](celigo_pipeline_automation_paper/testset/96_well)
 * [96 Well expected output](celigo_pipeline_automation_paper/testset/96_well_expected_output)
+
+
 
 # License
 
