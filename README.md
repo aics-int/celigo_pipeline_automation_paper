@@ -92,8 +92,8 @@ make install
 make install-dev
 ```
 # Post-Processing
-After the pipeline, there is some post-processing that is performed to reach our assessable metrics. This process can be performed using a
-series of scripts in this repo. When running multiple wells or plates, each image's metrics are exported to subsequent CSV. We found it helpful to concatenate metrics using this [Merge Script](scripts/merge_metrics.py).
+The post-processing operation performs a well-defined QC (Quality Control) morphology and imaging criteria-based scoring system, as described in this Nature Methods paper, following the execution of the cellprofiler pipeline. This process can be performed using a
+series of scripts in this repository. When running multiple wells or plates, each image's metrics are exported to subsequent CSV. We found it helpful to concatenate metrics using this [Merge Script](scripts/merge_metrics.py).
 
 
 ### 96 Well QC Scoring
